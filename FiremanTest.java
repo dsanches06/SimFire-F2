@@ -39,4 +39,9 @@ public class FiremanTest
     public void tearDown()
     {
     }
+    
+    @Test
+    public void testIsIsAbleToDrive() {
+        System.out.println("isIsAbleToDrive");
+    }
 }

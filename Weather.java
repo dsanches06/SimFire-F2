@@ -42,6 +42,11 @@ public class Weather
             this.windSpeed = 0;
         }
     }
+    
+    public void act() {
+        System.out.format("\nTempo de hoje com temperatura %dºC, humidade %d%% e "
+                + "velocidade do vento a %dkm/h.\n", temperature, humidity, windSpeed);
+    }
 
     // mostrar dados do tempo
     public void showInf() {

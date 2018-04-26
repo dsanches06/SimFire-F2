@@ -39,4 +39,18 @@ public class LocationTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void testIsLocationValid()
+    {
+        Location location1 = new Location(90, 180);
+        assertEquals(true, location1.isLocationValid(location1));
+        assertEquals(90, location1.getLatitude());
+        assertEquals(180, location1.getLongitude());
+    }
 }
+
+
+
+
+

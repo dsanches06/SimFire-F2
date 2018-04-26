@@ -1,4 +1,4 @@
-
+import java.text.*;
 /**
  * Escreva a descrição da classe Fire aqui.
  * 
@@ -61,7 +61,12 @@ public class Fire
         this.end = Time.getSistemTime();
         return true;
     }
-
+    
+    public void act() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        System.out.format("\nFogo na posicao [%s,%s] iniciou as %02dh%02d e ja ardeu numa area de %02d m2.\n",
+                df.format(location.getLatitude()), df.format(location.getLongitude()), begin.getHour(), begin.getMinute(), area);
+    }
     //mostrar dados dos fogo
     public void showInf() {
         System.out.println(" -- DADOS DO FOGO --");

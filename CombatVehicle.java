@@ -8,12 +8,12 @@ import java.util.*;
 public class CombatVehicle {
 
     //capacidade maxima entre 1500 a 20000 litros de aguas em ]500[
-    private static final int MIN_WATER_CAPACITY = 1500;
-    private static final int MAX_WATER_CAPACITY = 20000;
+    public static final int MIN_WATER_CAPACITY = 1500;
+    public static final int MAX_WATER_CAPACITY = 20000;
     //lugar maximo de 8 bombeiros
     public static final int MAX_FIREMAN = 8;
     //lugar minimos para 3 bombeiros
-    private static final int MIN_FIREMAN = 3;
+    public static final int MIN_FIREMAN = 3;
     //para gerar novo id
     private static int nextNumber = 0;
     //id
@@ -37,7 +37,7 @@ public class CombatVehicle {
             this.location = null;
             this.quarter = null;
             this.waterCapacity = waterCapacity;
-            this.firemans = new HashMap<>(CombatVehicle.MAX_FIREMAN);
+            this.firemans = new HashMap<>();
             this.fire = null;
         }
     }
@@ -141,17 +141,7 @@ public class CombatVehicle {
         return false;
     }
 
-    //se ja existe condutor no veiculo
-    private boolean existFiremanToDrive(Fireman fireman) {
-        //se tiver habilitaçao para conduzir
-        if (existFiremanAbleToDrive()
-                && fireman.isIsAbleToDrive() == true) {
-            //retorna verdadeira
-            return true;
-        }//retorna falso
-        return false;
-    }
-
+  
     //adicionar bombeiro
     public boolean addFireman(Fireman fireman) {
         //se bombeiro existir
@@ -160,7 +150,7 @@ public class CombatVehicle {
             //retorna falso
             return false;
         } //ou se ja existe 1 condutor
-        else if (existFiremanToDrive(fireman) == true) {
+        else if (existFiremanAbleToDrive() == fireman.isIsAbleToDrive()) {
             //retorna falso
             return false;
         }//se for igual 8 lugares ocupado

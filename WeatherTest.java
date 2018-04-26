@@ -39,4 +39,23 @@ public class WeatherTest
     public void tearDown()
     {
     }
+    
+     @Test
+    public void testIsTemperatureValid() {
+                System.out.println("isTemperatureValid");
+              
+       
+    }
+
+
+    @Test
+    public void testIsHumidityValid() {
+        System.out.println("isHumidityValid");;
+    }
+
+    @Test
+    public void testIsWindSpeedValid() {
+        System.out.println("isWindSpeedValid");
+    }
+
 }

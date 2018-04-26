@@ -39,4 +39,15 @@ public class SupplyStationTest
     public void tearDown()
     {
     }
+    @Test
+    public void testAddCombatVehicle() {
+        System.out.println("addCombatVehicle");
+    }
+
+    @Test
+    public void testRemoveCombatVehicle() {
+        System.out.println("removeCombatVehicle");
+
+    }
+    
 }

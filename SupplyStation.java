@@ -1,4 +1,5 @@
 import java.util.*;
+import java.text.DecimalFormat;
 /**
  * Escreva a descrição da classe SupplyStation aqui.
  * 
@@ -52,7 +53,15 @@ public class SupplyStation
         }
 
     }
-
+    
+    public void act() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        System.out.format("\nPosto Abastecimento %s na posicao [%s,%s] com capacidade de %02dL de agua.\n",
+                name, df.format(location.getLatitude()), 
+                df.format(location.getLongitude()),
+                waterCapacity);
+    }
+    
     private boolean isNameValid(String nome) {
         return !(nome.isEmpty() || nome.length() == 0);
     }

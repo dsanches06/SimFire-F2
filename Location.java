@@ -14,9 +14,9 @@ public class Location
     private static final float MAX_LONGITUDE = 180.0f;
     private static final float MIN_LONGITUDE = -180.0f;
     //latitude
-    private float latitude;
+    private int latitude;
     //longitude
-    private float longitude;
+    private int longitude;
 
     /* Construtor por defualt*/
     public Location() {
@@ -24,7 +24,7 @@ public class Location
     }
 
     /* Construtor */
-    public Location(float latitude, float longitude) {
+    public Location(int latitude, int longitude) {
         //se a latitude e longitude for válida
         if (isLocationValid(latitude, longitude) == true) {
             this.latitude = latitude;
@@ -57,7 +57,7 @@ public class Location
     }
 
     /* Metódo para validar a latitude e longitude */
-    private boolean isLocationValid(float newLatitude, float newLongitude) {
+    private boolean isLocationValid(int newLatitude, int newLongitude) {
         //se latitude for válida 
         if ((isLatitudeValid(newLatitude) == true)
                 //se longitude for válida 
@@ -70,29 +70,29 @@ public class Location
     }
 
     /* Metódo para validar latitude */
-    private boolean isLatitudeValid(float newLatitude) {
+    private boolean isLatitudeValid(int newLatitude) {
         //se latitude estiver entre -90º
-        if ((newLatitude >= Location.MIN_LATUTIDE)
-                // ou 90º
-                && (newLatitude <= Location.MAX_LATITUDE)) {
-            //retorna verdadeira
-            return true;
+        if ((newLatitude < Location.MIN_LATUTIDE)
+                // e 90º
+                || (newLatitude > Location.MAX_LATITUDE)) {
+            //retorna falso
+            return false;
         }
-        //se for o contrário, retorna falso
-        return false;
+        //se for o contrário, retorna verdadeiro
+        return true;
     }
 
     /* Metódo para validar longitude */
-    private boolean isLongitudeValid(float newLongitude) {
+    private boolean isLongitudeValid(int newLongitude) {
         //se longitude estiver entre -180º
-        if ((newLongitude >= Location.MIN_LONGITUDE)
-                // ou 180º
-                && (newLongitude <= Location.MAX_LONGITUDE)) {
-            //retorna verdadeira
-            return true;
+        if ((newLongitude < Location.MIN_LONGITUDE)
+                // e 180º
+                || (newLongitude > Location.MAX_LONGITUDE)) {
+            //retorna falso
+            return false;
         }
-        //se for o contrário, retorna falso
-        return false;
+        //se for o contrário, retorna verdadeiro
+        return true;
     }
 
     /* Metódo que calcula a distancia entre dois posição através da distância euclidiana */
@@ -105,19 +105,19 @@ public class Location
         return distance;
     }
 
-    public float getLatitude() {
+    public int getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(float latitude) {
+    public void setLatitude(int latitude) {
         this.latitude = latitude;
     }
 
-    public float getLongitude() {
+    public int getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(float longitude) {
+    public void setLongitude(int longitude) {
         this.longitude = longitude;
     }
 }

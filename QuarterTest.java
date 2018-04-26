@@ -39,4 +39,50 @@ public class QuarterTest
     public void tearDown()
     {
     }
+    
+    @Test
+    public void testAddFireman() {
+        System.out.println("addFireman");
+    }
+
+    @Test
+    public void testRemoveFireman() {
+        System.out.println("removeFireman");
+    }
+
+    @Test
+    public void testAddCombatVehicle() {
+        System.out.println("addCombatVehicle");
+    }
+
+    @Test
+    public void testRemoveCombatVehicle() {
+        System.out.println("removeCombatVehicle");
+    }
+    
+    @Test
+    public void testIsMeansOfAllocationToCombatIsvalid() {
+        System.out.println("isMeansOfAllocationToCombatIsvalid");
+    }
+
+    @Test
+    public void testSendVehicleToCombatFire() {
+        System.out.println("sendVehicleToCombatFire");
+    }
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+ 
 }
