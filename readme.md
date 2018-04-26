@@ -1,9 +1,12 @@
-# Projeto IPOO - FASE 1
+# Projeto IPOO - FASE 2
 
 Introdução à Programação Orientada por Objetos
 
 ### Aplicação SimFire
 Sistema de Simulação de Combate a Incêndios
+
+### Software IDE
+BlueJ
 
 
 ### Descrição do projeto
